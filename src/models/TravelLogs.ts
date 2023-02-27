@@ -1,4 +1,5 @@
 import db from '@/db';
+import { WithId } from 'mongodb';
 import { z } from 'zod';
 
 export const TravelLog = z.object({
@@ -11,6 +12,8 @@ export const TravelLog = z.object({
   visitDate: z.coerce.date(),
 });
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export type TravelLog = z.infer<typeof TravelLog>;
+export type TravelLogWithId = WithId<TravelLog>;
 
 export const TravelLogs = db.collection('logs');

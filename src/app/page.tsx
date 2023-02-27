@@ -1,4 +1,5 @@
 import { TravelLogs } from '@/models/TravelLogs';
+import TravelLogForm from '@/components/TravelLogForm';
 
 export default async function Home() {
   const logs = await TravelLogs.find().toArray();
@@ -10,6 +11,7 @@ export default async function Home() {
       {logs.map((log) => (
         <div key={log._id.toString()}>{log.title}</div>
       ))}
+      <TravelLogForm></TravelLogForm>
     </main>
   );
 }
