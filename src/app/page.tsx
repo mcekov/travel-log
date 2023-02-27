@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <main>
-      <h1>Hello Travel Log!</h1>
+      <h1 className="text-3xl">Hello Travel Log!</h1>
       <h2>There are {logs.length} in the db</h2>
       {logs.map((log) => (
         <div key={log._id.toString()}>{log.title}</div>
